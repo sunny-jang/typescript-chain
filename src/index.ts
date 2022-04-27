@@ -1,32 +1,30 @@
-class Human {
-    public name: string;
-    public age: number;
-    public gender: string;
+import * as CryptoJS from "crypto-js";
 
-    constructor(name: string, age: number, gender: string) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
+class Block {
+    public index: number;
+    public hash: string;
+    public previousHash: string;
+    public data: string;
+    public timestamp: number;
+
+    constructor(
+        index: number,
+        hash: string,
+        previousHash: string,
+        data: string,
+        timestamp: number
+    ) {
+        this.index = index;
+        this.hash = hash;
+        this.previousHash = previousHash;
+        this.data = data;
+        this.timestamp = timestamp;
     }
 }
 
-const sunny = new Human("Sunny", 28, "female");
-interface Human {
-    name: string,
-    age: number,
-    gender: string
-}
+const genesisBlock: Block = new Block(0, "1232323", "", "Hello", 1234);
 
-const person = {
-    name: "Sunny",
-    age: 24,
-    gender: "female"
-};
+let blockchain: [Block] = [genesisBlock];
+blockchain.push()
 
-const sayHi = (person: Human): string => {
-    return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}`;
-}
-
-console.log(sayHi(sunny));
-
-export { };
+console.log(blockchain);
