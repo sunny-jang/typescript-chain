@@ -25,6 +25,5 @@ class Block {
 const genesisBlock: Block = new Block(0, "1232323", "", "Hello", 1234);
 
 let blockchain: [Block] = [genesisBlock];
-blockchain.push()
 
 console.log(blockchain);
