@@ -1,6 +1,5 @@
-import * as CryptoJS from "crypto-js";
+import CryptoJS from "crypto-js";
 import { createFalse } from "typescript";
-
 class Block {
     public index: number;
     public hash: string;
